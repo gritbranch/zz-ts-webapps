@@ -1,6 +1,6 @@
 //a set of environment configuration files that holds properties
 module.exports = {
-  db: 'mongodb://localhost/mean-book',
+  db: 'mongodb://admin:admin@ds157187.mlab.com:57187/ts-webapps-dev',
   sessionSecret: 'developmentSessionSecret',
   facebook: {
     clientID: '1061065367261191',

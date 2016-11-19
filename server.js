@@ -22,6 +22,8 @@ var mongoose = require('./config/mongoose'),	//Requires mongoose module and crea
 	
 var db = mongoose();
 var app = express();
+var port = Number(process.env.PORT) || 3000;
+var ip = process.env.IP || '0.0.0.0';
 var passport = passport();
 
 /* Before the horizontal folder structure
@@ -33,7 +35,7 @@ app.use('/', function(req, res) {
 */
 
 //Tells the Express application to listen to port 3000.
-app.listen(3000);
+app.listen(port, ip);
 
 //Returns the Express application object.
 module.exports = app;
