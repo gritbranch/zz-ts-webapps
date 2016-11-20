@@ -1,20 +1,29 @@
 {
-  "name": "MEAN",
-  "version": "0.0.5",
+  "name": "ts-webapps",
+  "version": "1.0.0",
+  "description": "Nerds Produce Money",
+  "main": "server.js",
   "dependencies": {
-    "express": "~4.8.8",
-    "morgan": "~1.3.0",
-    "compression": "~1.0.11",
-    "body-parser": "~1.8.0",
-    "method-override": "~2.2.0",
-    "express-session": "~1.7.6",
-    "ejs": "~1.0.0",
-    "connect-flash": "~0.1.1",
-    "mongoose": "~3.8.15",
-    "passport": "~0.2.1",
-    "passport-local": "~1.0.0",
-    "passport-facebook": "~1.0.3",
-    "passport-twitter": "~1.0.2",
-    "passport-google-oauth": "~0.1.5"
-  }
+    "express": "4.14.0",
+    "morgan": "1.7.0",
+    "compression": "1.6.2",
+    "body-parser": "1.15.2",
+    "method-override": "2.3.7",
+    "express-session": "1.14.2",
+    "ejs": "2.5.2",
+    "connect-flash": "0.1.1",
+    "mongoose": "4.6.8",
+    "passport": "0.3.2",
+    "passport-local": "1.0.0",
+    "passport-facebook": "2.1.1",
+    "passport-twitter": "1.0.4",
+    "passport-google-oauth": "1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryansalvador/ts-webapps.git"
+  },
+  "author": "Ryan Salvador",
+  "license": "ISC"
+
 }

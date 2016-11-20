@@ -41,6 +41,13 @@ module.exports = function() {
   	app.set('views', './app/views');
   	app.set('view engine', 'ejs');
 
+	//sets folder path to public (win32 vs. linux)
+	if (process.platform === 'win32') {
+		app.use(express.static(__dirname + '\\public\\'));      
+	} else {
+		app.use(express.static(__dirname + '/public/'));  
+	}
+
 	app.use(flash());				//creates a new flash application in the session
  	app.use(passport.initialize()); //bootstraps the passport module
  	app.use(passport.session());	//uses express session to keep track of user's session

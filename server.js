@@ -15,6 +15,8 @@
 
 //process.env is a global variable that allows you to access predefined environment variables, and the most common one is the NODE_ENV environment variable which is often used for environment-specific configurations
 process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+var port = Number(process.env.PORT) || 3000;
+var ip = process.env.IP || '0.0.0.0';
 
 var mongoose = require('./config/mongoose'),	//Requires mongoose module and creates a mongoose object.
 	express = require('./config/express'), 		//Requires express module and creates an express object.
@@ -22,8 +24,6 @@ var mongoose = require('./config/mongoose'),	//Requires mongoose module and crea
 	
 var db = mongoose();
 var app = express();
-var port = Number(process.env.PORT) || 3000;
-var ip = process.env.IP || '0.0.0.0';
 var passport = passport();
 
 /* Before the horizontal folder structure
@@ -40,4 +40,8 @@ app.listen(port, ip);
 //Returns the Express application object.
 module.exports = app;
 
-console.log('Server running at http://localhost:3000/');
+if (ip === '0.0.0.0') {
+	console.log('Server running at http://localhost:' + port + '/');
+} else {
+	console.log('Server running at http://' + ip + ':' + port + '/');
+}
