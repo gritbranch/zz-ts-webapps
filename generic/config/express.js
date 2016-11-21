@@ -32,13 +32,13 @@ module.exports = function() {
 
 	//session middleware adds a session object to all request objects in your application
 	app.use(session({
-    	saveUninitialized: true,
+    	saveUninitialized: false,
     	resave: true,
     	secret: config.sessionSecret
   	}));
 
 	//app.set() method to configure the Express application views folder and template engine
-  	app.set('views', './app/views');
+  	app.set('views', './generic/app/views');
   	app.set('view engine', 'ejs');
 
 	//sets folder path to public (win32 vs. linux)
@@ -57,7 +57,7 @@ module.exports = function() {
 	require('../app/routes/articles.server.routes.js')(app); //Requires the routing articles and executes it passing the app as paramater.
 	
 	//loads express.static() to serve static files. This middleware takes one argument to determine the location of the static folder
-	app.use(express.static('./public'));
+	app.use(express.static('./generic/public'));
 
 	return app;
 };

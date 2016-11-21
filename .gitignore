@@ -46,6 +46,12 @@ Temporary Items
 .vscode/
 .settings/
 bin/
-node_modules/
 npm-debug.log
+
+node_modules/
+generic/node_modules/
+tinecdesign/node_modules/
+
 public/lib/
+generic/public/lib/
+tinecdesign/public/lib/

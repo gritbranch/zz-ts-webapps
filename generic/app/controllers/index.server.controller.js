@@ -15,4 +15,6 @@ exports.render = function(req, res) {
 		//Render the authenticated user object
 		user: JSON.stringify(req.user)
   	})
+
+	console.log(req.sessionID);
 };
