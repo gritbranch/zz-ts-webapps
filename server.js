@@ -44,13 +44,32 @@ var passport_1 = passport_1();
 //Tells the Express application to listen to port 3001.
 app_1.listen(port_1, ip);
 
+
+
+var port_2 = Number(process.env.PORT + 2) || 3002;
+
+var mongoose_2 = require('./tlwb/config/mongoose'),	//Requires mongoose module and creates a mongoose object.
+	express_2 = require('./tlwb/config/express'), 	//Requires express module and creates an express object.
+    passport_2 = require('./tlwb/config/passport');	//Requires passport module and creates a passport object.
+	
+var db_2 = mongoose_2();
+var app_2 = express_2();
+var passport_2 = passport_2();
+
+//Tells the Express application to listen to port 3002.
+app_2.listen(port_2, ip);
+
+
+
 //Returns the Express application object.
-module.exports = {app, app_1};
+module.exports = {app, app_1, app_2};
 
 if (ip === '0.0.0.0') {
 	console.log('generic app running at http://localhost:' + port + '/');
 	console.log('tinecdesign app running at http://localhost:' + port_1 + '/');
+	console.log('tlwb app running at http://localhost:' + port_2 + '/');
 } else {
 	console.log('generic app running at http://' + ip + ':' + port + '/');
 	console.log('tinecdesign app running at http://' + ip + ':' + port_1 + '/');
+	console.log('tlwb app running at http://' + ip + ':' + port_2 + '/');	
 }
