@@ -1,3 +1,5 @@
+angular.module('articles', []);
+
 //Uses four injected services:
 //$routeParams: This is provided with the ngRoute module and holds references to route parameters of the AngularJS routes you'll define next
 //$location: This allows you to control the navigation of your application
