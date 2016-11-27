@@ -1,23 +1,29 @@
-<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
-  <h1>Edit Article</h1>
-  <form data-ng-submit="update()" novalidate>
-    <div>
-      <label for="title">Title</label>
-      <div>
-        <input type="text" data-ng-model="article.title" id="title" placeholder="Title" required>
+<div id="fh5co-contact" ng-controller="ArticlesController" ng-init="findOne()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center heading-section">
+        <h3>Edit Article</h3>
+        <form ng-submit="update()" novalidate>
+          <div>
+            <div>
+              <input type="text" class="form-control" ng-model="article.title" id="title" placeholder="Title" required>
+            </div>
+          </div>
+          <div>
+            <div>
+              <textarea ng-model="article.content" class="form-control" id="content" cols="30" rows="10" placeholder="Content"></textarea>
+            </div>
+          </div>
+          <br>
+          <div>
+            <input class="btn btn-primary" type="submit" value="Edit">
+          </div>
+          <div ng-show="error">
+            <strong ng-bind="error"></strong>
+          </div>
+        </form>
+
       </div>
     </div>
-    <div>
-      <label for="content">Content</label>
-      <div>
-        <textarea data-ng-model="article.content" id="content" cols="30" rows="10" placeholder="Content"></textarea>
-      </div>
-    </div>
-    <div>
-      <input type="submit" value="Update">
-    </div>
-    <div data-ng-show="error">
-      <strong data-ng-bind="error"></strong>
-    </div>
-  </form>
-</section>
+  </div>
+</div>

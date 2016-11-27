@@ -1,41 +1,44 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>
-    <%=title %>
-  </title>
-</head>
-<body>
-  <% for(var i in messages) { %>
-    <div class="flash"><%= messages[i] %></div>
-  <% } %>
-  <form action="/signup" method="post">
-    <div>
-      <label>First Name:</label>
-      <input type="text" name="firstName" />
+<%- include header.ejs %>
+
+  <div id="fh5co-contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center heading-section">
+          <% for(var i in messages) { %>
+            <div class="flash">
+              <%= messages[i] %>
+            </div>
+            <% } %>
+              <form action="/signup" method="post">
+                <div>
+                  <input type="text" class="form-control" name="firstName" placeholder="First Name"/>
+                </div>
+                <div>
+                  <input type="text" class="form-control" name="lastName" placeholder="Last Name"/>
+                </div>
+                <div>
+                  <input type="text" class="form-control" name="email" placeholder="Email"/>
+                </div>
+                <div>
+                  <input type="text" class="form-control" name="username" placeholder="Username"/>
+                </div>
+                <div>
+                  <input type="password" class="form-control" name="password" placeholder="Password"/>
+                </div>
+                <br>
+                <div>
+                  <input class="btn btn-primary" type="submit" value="Sign up" />
+                </div>
+              </form>
+        </div>
+      </div>
     </div>
-    <div>
-      <label>Last Name:</label>
-      <input type="text" name="lastName" />
-    </div>
-    <div>
-      <label>Email:</label>
-      <input type="text" name="email" />
-    </div>
-    <div>
-      <label>Username:</label>
-      <input type="text" name="username" />
-    </div>
-    <div>
-      <label>Password:</label>
-      <input type="password" name="password" />
-    </div>
-    <div>
-      <input type="submit" value="Sign up" />
-    </div>
-  </form>
+  </div>
+
+  <!--
   <a href="/oauth/facebook">Sign in with Facebook</a><br>
   <a href="/oauth/twitter">Sign in with Twitter</a><br>
   <a href="/oauth/google">Sign in with Google</a>
-</body>
-</html>
+  -->
+
+<%- include footer.ejs %>

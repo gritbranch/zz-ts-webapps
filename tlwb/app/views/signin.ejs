@@ -1,29 +1,33 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>
-    <%=title %>
-  </title>
-</head>
-<body>
-  <% for(var i in messages) { %>
+<%- include header.ejs %>
+
+  <div id="fh5co-contact">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 text-center heading-section">
+    <% for(var i in messages) { %>
     <div class="flash"><%= messages[i] %></div>
   <% } %>
   <form action="/signin" method="post">
     <div>
-      <label>Username:</label>
-      <input type="text" name="username" />
+      <input type="text" class="form-control" name="username" placeholder="Username"/>
     </div>
     <div>
-      <label>Password:</label>
-      <input type="password" name="password" />
+      <input type="password" class="form-control" name="password" placeholder="Password"/>
     </div>
+    <br>
     <div>
-      <input type="submit" value="Sign In" />
+      <input class="btn btn-primary" type="submit" value="Sign In" />
     </div>
   </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--
   <a href="/oauth/facebook">Sign in with Facebook</a><br>
   <a href="/oauth/twitter">Sign in with Twitter</a><br>
   <a href="/oauth/google">Sign in with Google</a>
-</body>
-</html>
+  -->
+
+<%- include footer.ejs %>
