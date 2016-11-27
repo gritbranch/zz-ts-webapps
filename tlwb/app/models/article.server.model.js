@@ -19,8 +19,8 @@ var ArticleSchema = new Schema({
   },
   creator: {
     type: Schema.ObjectId,
-    ref: 'User'
+    ref: 'TLWB_User'
   }
 });
 
-mongoose.model('Article', ArticleSchema);
+mongoose.model('TLWB_Article', ArticleSchema);

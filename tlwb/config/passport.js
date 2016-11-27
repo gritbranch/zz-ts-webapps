@@ -2,7 +2,7 @@ var passport = require('passport'),
     mongoose = require('mongoose');
 
 module.exports = function() {
-	var User = mongoose.model('User');
+	var User = mongoose.model('TLWB_User');
 	
 	//When a user is authenticated, Passport will save its _id property to the session. Later on when the user object is needed, 
 	//Passport will use the _id property to grab the user object from the database.

@@ -1,5 +1,5 @@
 var mongoose = require('mongoose'),
-    Article = mongoose.model('Article'); // Includes your Article mongoose model
+    Article = mongoose.model('TLWB_Article'); // Includes your Article mongoose model
 	
 // Gets the Mongoose error object passed as an argument then iterates over the errors collection and extract the first message
 var getErrorMessage = function(err) {
