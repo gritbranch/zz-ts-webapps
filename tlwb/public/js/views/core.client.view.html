@@ -1,14 +1,49 @@
 <div id="fh5co-work-section" ng-controller="CoreController">
-
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 heading-section text-center">
+      <div class="col-md-8 col-md-offset-2 text-center heading-section">
+        <h3>The Little Wedding Book</h3>
+        <p>The Little Wedding Book is a one-stop shop wedding website company that provides couples with user-friendly resources
+          and full capabilities at the tip of their finger so that they may prepare for their big day wherever they are,
+          in a way that is streamlined and optimized for a worry-free and stress-free experience during this exciting period
+          of their lives.</p>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4 col-sm-4">
+        <div class="services">
+          <span><i class="icon-browser"></i></span>
+          <h3>Content</h3>
+          <p>In-house content from blogs, inspiration boards, and discussion boards make sure you have all the information you
+            need to know what you want and all the best tips on how to get things done.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="services">
+          <span><i class="icon-tools"></i></span>
+          <h3>Productivity/Organizational Tools</h3>
+          <p>Task manager and budgeting tools make sure you're on top of your tasks and finances. Guest/RSVP tracking and your
+            own wedding website makes sure you have everyone in line with the plans.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4">
+        <div class="services">
+          <span><i class="icon-search"></i></span>
+          <h3>Marketplace</h3>
+          <p>Supplier profile matching, communications and booking/reservation systems are in place to make sure you have the
+            best partners fully engaged to make your dream wedding come true.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2 text-center">
         <div ng-show="!authentication.user">
           <a class="btn btn-primary" href="/signup">Sign Up</a>
           <a class="btn btn-primary" href="/signin">Sign In</a>
         </div>
         <div ng-show="authentication.user">
-          <h1>Hello <span data-ng-bind="authentication.user.fullName"></span></h1>
+          <h3>Hello <span data-ng-bind="authentication.user.fullName"></span></h3>
           <a class="btn btn-primary" href="/#!/articles">List Articles</a>
           <a class="btn btn-primary" href="/#!/articles/create">Create Article</a>
           <a class="btn btn-primary" href="/signout">Sign Out</a>
@@ -16,6 +51,8 @@
       </div>
     </div>
   </div>
+
+  <br>
 
   <div class="container">
     <div class="row">
