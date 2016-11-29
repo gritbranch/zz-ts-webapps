@@ -50,10 +50,12 @@ npm-debug.log
 
 node_modules/
 generic/node_modules/
+generic_jwt/node_modules/
 tinecdesign/node_modules/
 tlwb/node_modules/
 
 public/lib/
 generic/public/lib/
+generic_jwt/public/lib/
 tinecdesign/public/lib/
 tlwb/public/lib/
