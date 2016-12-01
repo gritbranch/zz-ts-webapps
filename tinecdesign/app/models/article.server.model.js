@@ -19,8 +19,8 @@ var ArticleSchema = new Schema({
   },
   creator: {
     type: Schema.ObjectId,
-    ref: 'User'
+    ref: 'TineC_User'
   }
 });
 
-mongoose.model('Article', ArticleSchema);
+mongoose.model('TineC_Article', ArticleSchema);

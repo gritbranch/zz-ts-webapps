@@ -1,4 +1,4 @@
-var User = require('mongoose').model('User'),
+var User = require('mongoose').model('TineC_User'),
 	passport = require('passport');
 
 //Private method that returns a unified error message from a Mongoose error object.

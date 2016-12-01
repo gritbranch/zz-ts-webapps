@@ -2,7 +2,7 @@
 //Requires the Passport module, the local strategy module's Strategy object, and your User Mongoose model.
 var passport = require('passport'),
     LocalStrategy = require('passport-local').Strategy,
-    User = require('mongoose').model('User');
+    User = require('mongoose').model('TineC_User');
 
 module.exports = function() {
 	//LocalStrategy constructor takes a callback function as an argument. It will later call this callback when trying to authenticate a user

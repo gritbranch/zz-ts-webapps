@@ -114,4 +114,4 @@ UserSchema.statics.findUniqueUsername = function(username, suffix, callback) {
 //This will force Mongoose to include getters when converting the MongoDB document to a JSON representation and will allow the output of documents using res.json() to include the getter's behavior.
 UserSchema.set('toJSON', { getters: true, virtuals: true });
 
-mongoose.model('User', UserSchema);
+mongoose.model('GenJWT_User', UserSchema);

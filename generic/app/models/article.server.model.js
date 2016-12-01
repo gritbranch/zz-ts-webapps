@@ -19,8 +19,8 @@ var ArticleSchema = new Schema({
   },
   creator: {
     type: Schema.ObjectId,
-    ref: 'User'
+    ref: 'Gen_User'
   }
 });
 
-mongoose.model('Article', ArticleSchema);
+mongoose.model('Gen_Article', ArticleSchema);

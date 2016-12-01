@@ -9,6 +9,7 @@
     "compression": "1.6.2",
     "body-parser": "1.15.2",
     "method-override": "2.3.7",
+    "jsonwebtoken": "7.1.9",
     "express-session": "1.14.2",
     "ejs": "2.5.2",
     "connect-flash": "0.1.1",

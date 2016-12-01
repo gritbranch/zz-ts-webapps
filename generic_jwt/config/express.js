@@ -48,6 +48,8 @@ module.exports = function() {
 		app.use(express.static(__dirname + '/public/'));  
 	}
 
+	app.set(config.jwtSecret, config.jwtSecretKey); //Set secret varialble for JSON WEB TOKEN (JWT)
+
 	app.use(flash());				//creates a new flash application in the session
  	app.use(passport.initialize()); //bootstraps the passport module
  	app.use(passport.session());	//uses express session to keep track of user's session
