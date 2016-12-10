@@ -18,33 +18,39 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 
 var ip = process.env.IP || '0.0.0.0';
 
-var port_1 = Number(process.env.PORT) || 3000;
+var port_1 = Number(process.env.PORT) || 3001;
 
 var mongoose_1 = require('./generic/config/mongoose'),	//Requires mongoose module and creates a mongoose object.
-	express_1 = require('./generic/config/express'), 		//Requires express module and creates an express object.
+	express_1 = require('./generic/config/express'), 	//Requires express module and creates an express object.
     passport_1 = require('./generic/config/passport');	//Requires passport module and creates a passport object.
 	
 var db_1 = mongoose_1();
 var app_1 = express_1();
 var passport_1 = passport_1();
 
-//Tells the Express application to listen to port 3000.
-app_1.listen(port_1, ip);
+//Tells the Express application to listen to port 3001.
+//app_1.listen(port_1, ip);
+var listener_1 = app_1.listen(port_1, 'localhost', function() {
+    console.log("Generic App listening on port " + listener_1.address().port);
+});
 
-var port_2= Number(process.env.PORT + 1) || 3001;
+
+var port_2= Number(process.env.PORT + 1) || 3002;
 
 var mongoose_2 = require('./generic_jwt/config/mongoose'),	//Requires mongoose module and creates a mongoose object.
-	express_2 = require('./generic_jwt/config/express'), 	//Requires express module and creates an express object.
-    passport_2 = require('./generic_jwt/config/passport');	//Requires passport module and creates a passport object.
+	express_2 = require('./generic_jwt/config/express'); 	//Requires express module and creates an express object.
 	
 var db_2 = mongoose_2();
 var app_2 = express_2();
-var passport_2 = passport_2();
 
-//Tells the Express application to listen to port 3001.
-app_2.listen(port_2, ip);
+//Tells the Express application to listen to port 3002.
+//app_2.listen(port_2, ip);
+var listener_2 = app_2.listen(port_2, 'localhost', function() {
+    console.log("Generic JWT App listening on port " + listener_2.address().port);
+});
 
-var port_3 = Number(process.env.PORT + 2) || 3002;
+
+var port_3 = Number(process.env.PORT + 2) || 3003;
 
 var mongoose_3 = require('./tinecdesign/config/mongoose'),	//Requires mongoose module and creates a mongoose object.
 	express_3 = require('./tinecdesign/config/express'), 	//Requires express module and creates an express object.
@@ -54,12 +60,14 @@ var db_3 = mongoose_3();
 var app_3 = express_3();
 var passport_3 = passport_3();
 
-//Tells the Express application to listen to port 3002.
-app_3.listen(port_3, ip);
+//Tells the Express application to listen to port 3003.
+//app_3.listen(port_3, ip);
+var listener_3 = app_3.listen(port_3, 'localhost', function() {
+    console.log("Tine C Design App listening on port " + listener_3.address().port);
+});
 
 
-
-var port_4 = Number(process.env.PORT + 3) || 3003;
+var port_4 = Number(process.env.PORT + 3) || 3004;
 
 var mongoose_4 = require('./tlwb/config/mongoose'),	//Requires mongoose module and creates a mongoose object.
 	express_4 = require('./tlwb/config/express'), 	//Requires express module and creates an express object.
@@ -69,22 +77,12 @@ var db_4 = mongoose_4();
 var app_4 = express_4();
 var passport_4 = passport_4();
 
-//Tells the Express application to listen to port 3003.
-app_4.listen(port_4, ip);
-
+//Tells the Express application to listen to port 3004.
+//app_4.listen(port_4, ip);
+var listener_4 = app_4.listen(port_4, 'localhost', function() {
+    console.log("TLWB App listening on port " + listener_4.address().port);
+});
 
 
 //Returns the Express application object.
 module.exports = {app_1, app_2, app_3, app_4};
-
-if (ip === '0.0.0.0') {
-	console.log('generic app running at http://localhost:' + port_1 + '/');
-	console.log('generic_jwt app running at http://localhost:' + port_2 + '/');
-	console.log('tinecdesign app running at http://localhost:' + port_3 + '/');
-	console.log('tlwb app running at http://localhost:' + port_4 + '/');
-} else {
-	console.log('generic app running at http://' + ip + ':' + port_1 + '/');
-	console.log('generic_jwt app running at http://' + ip + ':' + port_2 + '/');
-	console.log('tinecdesign app running at http://' + ip + ':' + port_3 + '/');
-	console.log('tlwb app running at http://' + ip + ':' + port_4 + '/');	
-}

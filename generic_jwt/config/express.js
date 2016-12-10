@@ -3,10 +3,7 @@ var config = require('./config'),					//requires config.js
   	morgan = require('morgan'),						//morgan module provides a simple logger middleware
   	compress = require('compression'),				//compression module will provides response compression
   	bodyParser = require('body-parser'),			//body-parser module provides several middleware to handle request data
-  	methodOverride = require('method-override'),	//method-override module provides DELETE and PUT HTTP verbs legacy support
-  	session = require('express-session'),			//express-session module will use a cookie-stored, signed identifier to identify the current user
-  	flash = require('connect-flash'),				//registers flash module to the application
-	passport = require('passport');					//registers passport middleware to the application
+  	methodOverride = require('method-override');	//method-override module provides DELETE and PUT HTTP verbs legacy support
 
 //Used the CommonJS module pattern to define a module function that initializes the Express application.
 module.exports = function() {
@@ -26,16 +23,8 @@ module.exports = function() {
 		extended: true
 	}));
 	
-
 	app.use(bodyParser.json());
 	app.use(methodOverride());
-
-	//session middleware adds a session object to all request objects in your application
-	app.use(session({
-    	saveUninitialized: false,
-    	resave: true,
-    	secret: config.sessionSecret
-  	}));
 
 	//app.set() method to configure the Express application views folder and template engine
   	app.set('views', './generic_jwt/app/views');
@@ -49,10 +38,6 @@ module.exports = function() {
 	}
 
 	app.set(config.jwtSecret, config.jwtSecretKey); //Set secret varialble for JSON WEB TOKEN (JWT)
-
-	app.use(flash());				//creates a new flash application in the session
- 	app.use(passport.initialize()); //bootstraps the passport module
- 	app.use(passport.session());	//uses express session to keep track of user's session
 
 	require('../app/routes/index.server.routes.js')(app); //Requires the routing index and executes it passing the app as paramater.
 	require('../app/routes/users.server.routes.js')(app); //Requires the routing users and executes it passing the app as paramater.

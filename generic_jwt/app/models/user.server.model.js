@@ -51,7 +51,8 @@ var UserSchema = new Schema({
     	type: Date,
     	//Setting a default value
 		default: Date.now
-  	}
+  	},
+	admin: Boolean
 });
 
 //Virtual attributes are dynamically calculated properties which are not really presented in the document.
